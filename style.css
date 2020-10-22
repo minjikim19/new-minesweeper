@@ -1,0 +1,131 @@
+* {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.3rem;
+}
+
+body {
+  background: rgb(141, 170, 235);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.levelBtn {
+  border: 1px solid white;
+  color: white;
+}
+
+.levelBtn:hover {
+  background-color: white;
+  color: rgb(141, 170, 235);
+}
+
+.icon {
+  color: white;
+  padding-left: 5px;
+}
+
+.block {
+  width: auto;
+  height: auto;
+  border-radius: 10%;
+  border: none;
+  margin: 2px;
+  padding-bottom: 100%;
+  border-color: #f5f3eb #bab7a9 #bab7a9 #fff9db;
+  box-sizing: border-box;
+  content: "";
+  display: block;
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.block.flipped:nth-child(odd) {
+  background-color: #43637a;
+}
+
+.block.flipped:nth-child(even) {
+  background-color: #5883a1;
+}
+
+.block.bomb {
+  background-color: #f06f69;
+  color: white !important;
+  padding-bottom: 25% !important;
+}
+
+.block.flag {
+  background-color: #7aa1f0;
+  color: white !important;
+  padding-bottom: 25% !important;
+  padding-top: 10%;
+}
+
+.block.number {
+  font-weight: bold;
+  text-shadow: -1px 1px 2px white, 1px 1px 2px white, 1px -1px 0 white,
+    -1px -1px 0 white;
+}
+
+.block.number:nth-child(odd) {
+  background-color: #d7b899;
+  padding-bottom: 25% !important;
+}
+
+.block.number:nth-child(even) {
+  background-color: #e5c29f;
+  padding-bottom: 25% !important;
+}
+
+.number {
+  padding-top: 5px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  border-radius: 10px;
+  width: calc(70vh);
+}
+
+#win {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 3;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
+#lost {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 3;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
+#win.active {
+  visibility: visible;
+}
+
+#lost.active {
+  visibility: visible;
+}
